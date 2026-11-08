@@ -12,6 +12,7 @@ export class PortfolioModel {
           title: "Geospatial Science Professional & Environmental Project Officer",
           location: "Tarawa, Kiribati",
           email: "t.taam@melad.gov.ki",
+          whatsapp: "+686 73013905",
           education: { degree: "Bachelor of Geospatial Science", institution: "The University of the South Pacific (USP)", year: "2025" },
           bio: "Passionate Geospatial Science graduate and Environmental Project Officer with expertise in marine litter reduction, environmental resilience frameworks, and community stakeholder engagement across Kiribati."
         },

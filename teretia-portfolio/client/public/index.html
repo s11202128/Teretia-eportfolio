@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +7,18 @@
     <meta name="theme-color" content="#120a1f" />
     <meta name="description" content="Teretia Tawaia — Geospatial Science Professional & Environmental Project Officer, Tarawa, Kiribati." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply saved / system theme before first paint (prevents a flash of the wrong mode)
+      (function () {
+        var theme = 'dark';
+        try {
+          var saved = localStorage.getItem('tt-theme');
+          if (saved === 'light' || saved === 'dark') theme = saved;
+          else if (window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light';
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <title>Teretia Tawaia | e-Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

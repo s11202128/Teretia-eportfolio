@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import { SECTIONS } from '../viewmodels/usePortfolioViewModel';
 
 const LABELS = { about: 'About', experience: 'Experience', skills: 'Skills', references: 'References' };
 
-export function HeaderView({ profile, activeTab, onSelectTab }) {
+export function HeaderView({ profile, activeTab, onSelectTab, theme, onToggleTheme }) {
   const [logoFailed, setLogoFailed] = useState(false);
   if (!profile) return null;
   const initials = profile.name.split(' ').map((p) => p[0]).join('').slice(0, 2);
+  const nextMode = theme === 'light' ? 'dark' : 'light';
 
   return (
     <header className="nav">
@@ -27,20 +29,33 @@ export function HeaderView({ profile, activeTab, onSelectTab }) {
           )}
           <span className="nav__brand-text">{profile.name}</span>
         </a>
-        <ul className="nav__links">
-          {SECTIONS.map((tab) => (
-            <li key={tab}>
-              <button
-                type="button"
-                className="nav__link"
-                aria-current={activeTab === tab ? 'true' : undefined}
-                onClick={() => onSelectTab(tab)}
-              >
-                {LABELS[tab]}
-              </button>
-            </li>
-          ))}
-        </ul>
+
+        <div className="nav__right">
+          <ul className="nav__links">
+            {SECTIONS.map((tab) => (
+              <li key={tab}>
+                <button
+                  type="button"
+                  className="nav__link"
+                  aria-current={activeTab === tab ? 'true' : undefined}
+                  onClick={() => onSelectTab(tab)}
+                >
+                  {LABELS[tab]}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${nextMode} mode`}
+            title={`Switch to ${nextMode} mode`}
+          >
+            <Sun size={20} className="icon-sun" aria-hidden="true" />
+            <Moon size={20} className="icon-moon" aria-hidden="true" />
+          </button>
+        </div>
       </nav>
     </header>
   );
