@@ -5,6 +5,7 @@ const portfolioData = {
     location: "Tarawa, Kiribati",
     email: "t.taam@melad.gov.ki",
     phone: "+686 7000000",
+    whatsapp: "+686 73013905",
     education: {
       degree: "Bachelor of Geospatial Science",
       institution: "The University of the South Pacific (USP)",

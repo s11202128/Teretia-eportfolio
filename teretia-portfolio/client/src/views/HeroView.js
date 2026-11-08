@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, ArrowRight, GraduationCap, Globe, Waves, Sparkles, Leaf } from 'lucide-react';
+import { MapPin, Mail, ArrowRight, GraduationCap, Globe, Waves, Sparkles, Leaf, Heart } from 'lucide-react';
 
 export function HeroView({ profile, skills, experience, onSelectTab }) {
   const [imgFailed, setImgFailed] = useState(false);
@@ -21,6 +21,9 @@ export function HeroView({ profile, skills, experience, onSelectTab }) {
               {latest ? `Now · ${latest.title}` : 'e-Portfolio'}
             </div>
 
+            <p className="hero__hello reveal" style={{ '--delay': '40ms' }}>
+              <Sparkles size={22} aria-hidden="true" /> Hello, I'm
+            </p>
             <h1 id="hero-name" className="hero__name reveal" style={{ '--delay': '80ms' }}>
               {first}<br />
               <span className="accent">{rest.join(' ')}</span>
@@ -63,6 +66,7 @@ export function HeroView({ profile, skills, experience, onSelectTab }) {
                   />
                 )}
               </div>
+              <span className="portrait__heart" aria-hidden="true"><Heart size={22} fill="currentColor" /></span>
               {featured[0] && (
                 <span className="chip-float chip-float--1 glass"><Leaf size={16} aria-hidden="true" />{featured[0]}</span>
               )}
@@ -86,8 +90,8 @@ export function HeroView({ profile, skills, experience, onSelectTab }) {
             <div className="stat__label">{profile.education.degree}</div>
           </div>
           <div className="stat">
-            <div className="stat__value" style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-              Pacific <Sparkles size={22} color="#f9a8d4" aria-hidden="true" />
+            <div className="stat__value">
+              Pacific <Sparkles size={22} aria-hidden="true" />
             </div>
             <div className="stat__label">Marine litter &amp; climate resilience focus</div>
           </div>

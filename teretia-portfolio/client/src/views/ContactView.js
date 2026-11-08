@@ -19,7 +19,7 @@ export function ContactView({ profile }) {
             <a className="btn btn--primary" href={`mailto:${profile.email}`}>
               <Mail size={18} aria-hidden="true" /> Email {profile.name.split(' ')[0]}
             </a>
-            <span className="btn btn--ghost" style={{ cursor: 'default' }}>
+            <span className="btn btn--ghost btn--static">
               <MapPin size={18} aria-hidden="true" /> {profile.location}
             </span>
           </div>

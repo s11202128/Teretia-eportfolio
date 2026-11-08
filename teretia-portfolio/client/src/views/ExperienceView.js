@@ -14,7 +14,7 @@ export function ExperienceView({ experience }) {
           </h2>
         </div>
 
-        <ol className="timeline" style={{ listStyle: 'none' }}>
+        <ol className="timeline">
           {experience.map((item, idx) => (
             <li key={idx} className="role glass glass--hover reveal" style={{ '--delay': `${idx * 100}ms` }}>
               <span className="role__node" aria-hidden="true" />
